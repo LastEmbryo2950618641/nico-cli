@@ -1,6 +1,6 @@
 ---
 name: nikowenku-archive
-description: "Use when searching the Wenku Archive, a library focused mainly on light novels, inspecting metadata, exporting text, or looking up the cross-platform nikowenku-archive command."
+description: "Use for Chinese light novel library searches, book details, metadata lookup, and full-text exports with the cross-platform nikowenku-archive CLI."
 ---
 
 # Niko Wenku Archive
@@ -9,18 +9,18 @@ The Wenku Archive focuses mainly on light novels and may also contain other work
 
 ## Install
 
-Requires Node.js 22 or newer and npm. The downloaded `.tgz` has no third-party runtime dependencies and can be installed from disk offline.
+Requires Node.js 22 or newer and npm. The package has no third-party runtime dependencies. For npm installation use `npm install -g nikowenku-archive`; the downloaded `.tgz` can also be installed from disk offline.
 
 Windows PowerShell:
 
 ```powershell
-npm install -g --offline .\nikowenku-archive-0.1.1.tgz
+npm install -g --offline .\nikowenku-archive-0.1.2.tgz
 ```
 
 Linux or macOS:
 
 ```sh
-npm install -g --offline ./nikowenku-archive-0.1.1.tgz
+npm install -g --offline ./nikowenku-archive-0.1.2.tgz
 ```
 
 To install this Skill in the current project, place the downloaded `nikowenku-archive-skill.md` at `.agents/skills/nikowenku-archive/SKILL.md`. PowerShell:
@@ -43,7 +43,7 @@ Windows, Linux, and macOS use the same Node.js CLI. To check that the command is
 
 ## Commands
 
-The CLI connects to the public archive at `http://111.229.32.85` by default. Use the book ID returned by `search` with `info` or `download`.
+The CLI connects to the public archive at `http://111.229.32.85/nikowenku-archive/` by default. Use the book ID returned by `search` with `info` or `download`.
 
 ```sh
 nikowenku-archive search "西游记" --limit 10
@@ -51,6 +51,8 @@ nikowenku-archive info xiyouji
 nikowenku-archive info xiyouji --json
 nikowenku-archive download xiyouji --output "./西游记.txt"
 ```
+
+To use another server, pass its base URL, including a path prefix, with `--site https://example.org/nikowenku-archive/` or set `ARCHIVE_SITE_URL`.
 
 PowerShell paths can use backslashes, for example `--output .\西游记.txt`. Search supports titles, original titles, authors, descriptions, and tags. The default limit is 20; `--limit` accepts 1–100. `info --json` returns the complete metadata, chapter list, and file information.
 

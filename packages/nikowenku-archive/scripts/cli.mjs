@@ -9,7 +9,7 @@ import { resolve, dirname, extname, join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { createLibrary } from '../server/library.mjs';
 
-const defaultSite = 'http://111.229.32.85';
+const defaultSite = 'http://111.229.32.85/nikowenku-archive/';
 const validId = /^[\p{L}\p{N}][\p{L}\p{N}_.-]{0,79}$/u;
 const help = `用法：nikowenku-archive <command> [options]
 

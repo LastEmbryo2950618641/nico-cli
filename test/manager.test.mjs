@@ -32,6 +32,7 @@ test('both npm tarballs install offline with an empty cache and work outside the
   };
   npm(['pack', root, '--pack-destination', base]);
   npm(['pack', join(root, 'packages/nikowenku-archive'), '--pack-destination', base]);
+  const archiveManifest = JSON.parse(await readFile(join(root, 'packages/nikowenku-archive/package.json'), 'utf8'));
   const library = join(base, 'library');
   const book = join(library, 'sample');
   await mkdir(book, { recursive: true });
@@ -40,7 +41,7 @@ test('both npm tarballs install offline with an empty cache and work outside the
   await writeFile(join(book, 'book.txt'), content);
   for (const [name, version, entry, prefixArgs] of [
     ['nico-cli', '0.1.0', 'bin/nico-cli.mjs', ['nikowenku-archive']],
-    ['nikowenku-archive', '0.1.1', 'scripts/cli.mjs', []]
+    ['nikowenku-archive', archiveManifest.version, 'scripts/cli.mjs', []]
   ]) {
     const prefix = join(base, name);
     npm(['install', '--prefix', prefix, '--offline', '--cache', join(base, 'cache-' + name), '--ignore-scripts', '--no-audit', '--no-fund', join(base, `${name}-${version}.tgz`)]);
