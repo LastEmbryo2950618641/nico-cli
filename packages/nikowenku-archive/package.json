@@ -19,9 +19,27 @@
     "ai-agent"
   ],
   "homepage": "http://111.229.32.85/nikowenku-archive/",
-  "bugs": { "url": "https://github.com/LastEmbryo2950618641/niko-wenku/issues" },
-  "bin": { "nikowenku-archive": "./scripts/cli.mjs" },
-  "engines": { "node": ">=22" },
-  "files": ["scripts/cli.mjs", "server/library.mjs", "server/text.mjs", "shared/language.mjs", "skill/SKILL.md", "LICENSE", "README.md"],
-  "repository": { "type": "git", "url": "git+https://github.com/LastEmbryo2950618641/nico-cli.git", "directory": "packages/nikowenku-archive" }
+  "bugs": {
+    "url": "https://github.com/LastEmbryo2950618641/niko-wenku/issues"
+  },
+  "bin": {
+    "nikowenku-archive": "scripts/cli.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "scripts/cli.mjs",
+    "server/library.mjs",
+    "server/text.mjs",
+    "shared/language.mjs",
+    "skill/SKILL.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LastEmbryo2950618641/nico-cli.git",
+    "directory": "packages/nikowenku-archive"
+  }
 }

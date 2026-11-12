@@ -80,7 +80,7 @@ test('help uses the registered command name and invalid requests fail without a 
   assert.equal(help.status, 0, help.stderr);
   assert.match(help.stdout, /nikowenku-archive <command>/);
   const manifest = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
-  assert.equal(manifest.bin['nikowenku-archive'], './scripts/cli.mjs');
+  assert.equal(manifest.bin['nikowenku-archive'], 'scripts/cli.mjs');
   for (const args of [['typo'], ['search'], ['search', '星', '--limit', '0'], ['info'], ['download', 'unknown-book', '--output', f.output]]) {
     const result = run(f, ...args);
     assert.equal(result.status, 1, JSON.stringify(args));
