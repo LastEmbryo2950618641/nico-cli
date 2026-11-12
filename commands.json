@@ -1,0 +1,7 @@
+[
+  {
+    "name": "nikowenku-archive",
+    "description": "轻小说书库：搜索、查看详情、下载正文",
+    "entry": "packages/nikowenku-archive/scripts/cli.mjs"
+  }
+]
