@@ -1,8 +1,10 @@
 # nikowenku-archive
 
-A cross-platform command-line client for a library focused mainly on Chinese light novels. Search titles and authors, inspect book metadata, and export full text to a local file. It runs on Windows, Linux, and macOS with Node.js 22 or newer and has no third-party runtime dependencies.
+`nikowenku-archive` is a cross-platform CLI and AI agent skill for a library focused mainly on Chinese light novels (轻小说). Search titles and authors, inspect book metadata, and export full text to a local file. It runs on Windows, Linux, and macOS with Node.js 22 or newer and has no third-party runtime dependencies.
 
 The package can be used by itself. It does not require the `nico-cli` manager, the website source code, or a local server when using the public library.
+
+Keywords: Chinese light novels, web novels, 轻小说, 小说搜索, novel search, book lookup, text export, AI agent skill.
 
 ## Install
 
@@ -13,7 +15,7 @@ npm install -g nikowenku-archive
 To install the published package archive without contacting npm during installation:
 
 ```sh
-npm install -g --offline ./nikowenku-archive-0.1.2.tgz
+npm install -g --offline ./nikowenku-archive-0.1.3.tgz
 ```
 
 ## Commands
@@ -46,7 +48,13 @@ nikowenku-archive download my-book --library "./library" --output "./my-book.txt
 
 ## AI assistant Skill
 
-The package includes an AI Skill that also serves as the command reference: [`skill/SKILL.md`](skill/SKILL.md). In a project, copy it to `.agents/skills/nikowenku-archive/SKILL.md`. Windows PowerShell:
+The package includes an AI Skill that also serves as the command reference: [`skill/SKILL.md`](skill/SKILL.md). Install it from GitHub with the Agent Skills CLI for Codex, Claude Code, Cursor, and other compatible agents:
+
+```sh
+npx skills add LastEmbryo2950618641/nico-cli --skill nikowenku-archive
+```
+
+The same skill file is available in the npm installation. In a project, copy it to `.agents/skills/nikowenku-archive/SKILL.md`. Windows PowerShell:
 
 ```powershell
 New-Item -ItemType Directory -Force .agents\skills\nikowenku-archive | Out-Null
@@ -60,4 +68,4 @@ mkdir -p .agents/skills/nikowenku-archive
 cp "$(npm root -g)/nikowenku-archive/skill/SKILL.md" .agents/skills/nikowenku-archive/SKILL.md
 ```
 
-Source and issue tracker: [GitHub](https://github.com/LastEmbryo2950618641/niko-wenku). Use this software only with content you are authorized to access and keep.
+Source and issue tracker: [GitHub](https://github.com/LastEmbryo2950618641/nico-cli). Use this software only with content you are authorized to access and keep.

@@ -49,4 +49,4 @@ npm run pack:archive
 
 两个安装包输出到 `dist/`，可离线安装。源码本身无需 `npm install`。npm 包内的 Skill 兼命令手册位于 `packages/nikowenku-archive/skill/SKILL.md`，Agent Skills 目录使用的标准入口位于 `skills/nikowenku-archive/SKILL.md`。本仓库负责命令源码，`niko-wenku` 网站通过固定版本的 Git 子模块调用这里的打包脚本。
 
-独立书库 CLI 已发布为 `nikowenku-archive@0.1.2`；`nico-cli` 管理器尚未发布 npm。未来从各包目录分别发布新版本，请勿覆盖已发布版本。
+独立书库 CLI 已发布至 npm；`nico-cli` 管理器尚未发布 npm。未来从各包目录分别发布新版本，请勿覆盖已发布版本。

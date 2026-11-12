@@ -14,16 +14,22 @@ Requires Node.js 22 or newer and npm. The package has no third-party runtime dep
 Windows PowerShell:
 
 ```powershell
-npm install -g --offline .\nikowenku-archive-0.1.2.tgz
+  npm install -g --offline .\nikowenku-archive-0.1.3.tgz
 ```
 
 Linux or macOS:
 
 ```sh
-npm install -g --offline ./nikowenku-archive-0.1.2.tgz
+npm install -g --offline ./nikowenku-archive-0.1.3.tgz
 ```
 
 To install this Skill in the current project, place the downloaded `nikowenku-archive-skill.md` at `.agents/skills/nikowenku-archive/SKILL.md`. PowerShell:
+
+For Codex, Claude Code, Cursor, and other compatible agents, it can also be installed directly from GitHub with the Agent Skills CLI:
+
+```sh
+npx skills add LastEmbryo2950618641/nico-cli --skill nikowenku-archive
+```
 
 ```powershell
 New-Item -ItemType Directory -Force .agents\skills\nikowenku-archive | Out-Null
