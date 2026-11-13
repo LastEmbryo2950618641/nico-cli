@@ -7,6 +7,14 @@ description: "Use for Chinese light novel library searches, book details, metada
 
 The Wenku Archive focuses mainly on light novels and may also contain other works. Use the `nikowenku-archive` command for archive searches, book details, and full-text exports. This Skill is also the command reference. When the user asks to perform an operation, run the command and report its actual result; when they ask how it works, answer from this reference without running it.
 
+## Website and Library
+
+- **Main homepage:** `https://111.229.32.85/` is the site's website-card collection and navigation portal. The light novel library is the first default card; the homepage itself is not the book catalog.
+- **Light novel library:** `https://111.229.32.85/nikowenku-archive/` opens the Wenku website for browsing, searching, viewing book details, reading online, and downloading archived text.
+- **CLI base URL:** `http://111.229.32.85/nikowenku-archive/` remains the command's default. When setting `--site` or `ARCHIVE_SITE_URL`, include `/nikowenku-archive/`; for example, `--site https://111.229.32.85/nikowenku-archive/`.
+
+For a request to open the main site, provide the homepage URL. For a request to find or open a book in the website, use the library URL; for search results, metadata, or a local text export, use the CLI commands below. Public read requests use the primary library backend by default and can automatically fail over to its read-only standby; clients keep the same public URL.
+
 ## Install
 
 Requires Node.js 22 or newer and npm. The package has no third-party runtime dependencies. For npm installation use `npm install -g nikowenku-archive`; the downloaded `.tgz` can also be installed from disk offline.
