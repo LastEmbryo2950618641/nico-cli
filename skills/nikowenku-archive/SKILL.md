@@ -28,7 +28,7 @@ The CLI has no third-party runtime dependencies. Remote search, details, and dow
 To install this Skill into a project with a supported coding agent, use the Agent Skills CLI:
 
 ```sh
-npx skills add LastEmbryo2950618641/nico-cli --skill nikowenku-archive
+npx skills add LastEmbryo2950618641/niko-cli --skill nikowenku-archive
 ```
 
 Installing this Skill does not install the CLI. If the command is unavailable and the user requests an archive operation, explain that the CLI requires Node.js 22+ and npm, and provide the install command.

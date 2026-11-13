@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const manager = join(root, 'bin/nico-cli.mjs');
+const manager = join(root, 'bin/niko-cli.mjs');
 const standalone = join(root, 'packages/nikowenku-archive/scripts/cli.mjs');
 const run = (entry, args, options = {}) => spawnSync(process.execPath, [entry, ...args], { encoding: 'utf8', ...options });
 
@@ -21,7 +21,7 @@ test('manager lists builtins, displays tool help and rejects unknown tools', () 
 });
 
 test('both npm tarballs install offline with an empty cache and work outside the source tree', async t => {
-  const base = await mkdtemp(join(tmpdir(), 'nico offline 测试-'));
+  const base = await mkdtemp(join(tmpdir(), 'niko offline 测试-'));
   t.after(() => rm(base, { recursive: true, force: true }));
   const npmCli = process.env.npm_execpath;
   assert.ok(npmCli, 'Run these tests with npm test to locate the cross-platform npm entry');
@@ -40,7 +40,7 @@ test('both npm tarballs install offline with an empty cache and work outside the
   const content = '第一章 出发\n测试轻小说正文。';
   await writeFile(join(book, 'book.txt'), content);
   for (const [name, version, entry, prefixArgs] of [
-    ['nico-cli', '0.1.0', 'bin/nico-cli.mjs', ['nikowenku-archive']],
+    ['niko-cli', '0.1.0', 'bin/niko-cli.mjs', ['nikowenku-archive']],
     ['nikowenku-archive', archiveManifest.version, 'scripts/cli.mjs', []]
   ]) {
     const prefix = join(base, name);
@@ -63,7 +63,7 @@ test('both npm tarballs install offline with an empty cache and work outside the
 });
 
 test('manager and standalone source preserve arguments and errors in local mode', async t => {
-  const base = await mkdtemp(join(tmpdir(), 'nico-args-'));
+  const base = await mkdtemp(join(tmpdir(), 'niko-args-'));
   t.after(() => rm(base, { recursive: true, force: true }));
   const args = ['info', 'unknown', '--library', join(base, 'library')];
   const direct = run(standalone, args);

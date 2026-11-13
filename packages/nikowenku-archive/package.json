@@ -34,9 +34,9 @@
     "agent-skills",
     "ai-agent"
   ],
-  "homepage": "https://github.com/LastEmbryo2950618641/nico-cli/tree/main/packages/nikowenku-archive",
+  "homepage": "https://github.com/LastEmbryo2950618641/niko-cli/tree/main/packages/nikowenku-archive",
   "bugs": {
-    "url": "https://github.com/LastEmbryo2950618641/nico-cli/issues"
+    "url": "https://github.com/LastEmbryo2950618641/niko-cli/issues"
   },
   "bin": {
     "nikowenku-archive": "scripts/cli.mjs"
@@ -55,7 +55,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LastEmbryo2950618641/nico-cli.git",
+    "url": "git+https://github.com/LastEmbryo2950618641/niko-cli.git",
     "directory": "packages/nikowenku-archive"
   }
 }

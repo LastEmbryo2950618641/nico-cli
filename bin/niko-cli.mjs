@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = new URL('../', import.meta.url);
 const commands = JSON.parse(await readFile(new URL('commands.json', root), 'utf8'));
 const manifest = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));
-const help = `用法：nico-cli <command> [arguments]
+const help = `用法：niko-cli <command> [arguments]
 
 管理命令：
   list [--json]                  列出内置工具
@@ -17,9 +17,9 @@ const help = `用法：nico-cli <command> [arguments]
 ${commands.map(command => `  ${command.name}    ${command.description}`).join('\n')}
 
 示例：
-  nico-cli nikowenku-archive search "星"
-  nico-cli nikowenku-archive info wenku8-934
-  nico-cli nikowenku-archive download wenku8-934 --output ./book.txt
+  niko-cli nikowenku-archive search "星"
+  niko-cli nikowenku-archive info wenku8-934
+  niko-cli nikowenku-archive download wenku8-934 --output ./book.txt
 
 书库工具也可独立安装并运行：nikowenku-archive search "星"`;
 
@@ -30,13 +30,13 @@ try {
   } else if (command === '--version' && !args.length) {
     console.log(manifest.version);
   } else if (command === 'list') {
-    if (args.length && (args.length !== 1 || args[0] !== '--json')) throw new Error('用法：nico-cli list [--json]');
+    if (args.length && (args.length !== 1 || args[0] !== '--json')) throw new Error('用法：niko-cli list [--json]');
     const result = commands.map(({ name, description }) => ({ name, description, status: 'bundled' }));
     console.log(args[0] === '--json' ? JSON.stringify(result, null, 2) : result.map(tool => `${tool.name}\t${tool.description}`).join('\n'));
   } else {
     const name = command === 'help' ? args[0] : command;
     const tool = commands.find(item => item.name === name);
-    if (!tool) throw new Error(`未知工具：${name}。请运行 nico-cli list 查看可用工具。`);
+    if (!tool) throw new Error(`未知工具：${name}。请运行 niko-cli list 查看可用工具。`);
     const entry = fileURLToPath(new URL(tool.entry, root));
     const child = spawn(process.execPath, [entry, ...(command === 'help' ? ['--help'] : args)], { stdio: 'inherit', windowsHide: true });
     const forward = signal => { if (child.exitCode === null) child.kill(signal); };

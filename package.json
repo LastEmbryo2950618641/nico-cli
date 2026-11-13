@@ -1,16 +1,16 @@
 {
-  "name": "nico-cli",
+  "name": "niko-cli",
   "version": "0.1.0",
   "description": "Cross-platform command toolbox with an independently usable light novel archive CLI",
   "type": "module",
   "license": "MIT",
   "engines": { "node": ">=22" },
-  "bin": { "nico-cli": "./bin/nico-cli.mjs" },
+  "bin": { "niko-cli": "./bin/niko-cli.mjs" },
   "files": ["bin/", "commands.json", "packages/nikowenku-archive/scripts/", "packages/nikowenku-archive/server/", "packages/nikowenku-archive/shared/", "packages/nikowenku-archive/skill/", "packages/nikowenku-archive/package.json", "packages/nikowenku-archive/LICENSE", "packages/nikowenku-archive/README.md"],
   "scripts": {
     "test": "node --test test/*.test.mjs",
     "pack:all": "node scripts/pack.mjs",
     "pack:archive": "node scripts/pack.mjs --archive-only"
   },
-  "repository": { "type": "git", "url": "git+https://github.com/LastEmbryo2950618641/nico-cli.git" }
+  "repository": { "type": "git", "url": "git+https://github.com/LastEmbryo2950618641/niko-cli.git" }
 }

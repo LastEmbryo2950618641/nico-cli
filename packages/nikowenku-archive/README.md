@@ -2,7 +2,7 @@
 
 `nikowenku-archive` is a cross-platform CLI and AI agent skill for a library focused mainly on Chinese light novels (轻小说). Search titles and authors, inspect book metadata, and export full text to a local file. It runs on Windows, Linux, and macOS with Node.js 22 or newer and has no third-party runtime dependencies.
 
-The package can be used by itself. It does not require the `nico-cli` manager, the website source code, or a local server when using the public library.
+The package can be used by itself. It does not require the `niko-cli` manager, the website source code, or a local server when using the public library.
 
 Keywords: Chinese light novels, web novels, 轻小说, 小说搜索, novel search, book lookup, text export, AI agent skill.
 
@@ -53,7 +53,7 @@ nikowenku-archive download my-book --library "./library" --output "./my-book.txt
 The package includes an AI Skill that also serves as the command reference: [`skill/SKILL.md`](skill/SKILL.md). Install it from GitHub with the Agent Skills CLI for Codex, Claude Code, Cursor, and other compatible agents:
 
 ```sh
-npx skills add LastEmbryo2950618641/nico-cli --skill nikowenku-archive
+npx skills add LastEmbryo2950618641/niko-cli --skill nikowenku-archive
 ```
 
 The same skill file is available in the npm installation. In a project, copy it to `.agents/skills/nikowenku-archive/SKILL.md`. Windows PowerShell:
@@ -70,4 +70,4 @@ mkdir -p .agents/skills/nikowenku-archive
 cp "$(npm root -g)/nikowenku-archive/skill/SKILL.md" .agents/skills/nikowenku-archive/SKILL.md
 ```
 
-Source and issue tracker: [GitHub](https://github.com/LastEmbryo2950618641/nico-cli). Use this software only with content you are authorized to access and keep.
+Source and issue tracker: [GitHub](https://github.com/LastEmbryo2950618641/niko-cli). Use this software only with content you are authorized to access and keep.
