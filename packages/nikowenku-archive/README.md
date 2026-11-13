@@ -15,7 +15,7 @@ npm install -g nikowenku-archive
 To install the published package archive without contacting npm during installation:
 
 ```sh
-npm install -g --offline ./nikowenku-archive-0.1.3.tgz
+npm install -g --offline ./nikowenku-archive-0.1.4.tgz
 ```
 
 ## Commands
@@ -31,7 +31,9 @@ nikowenku-archive download wenku8-934 --output "./西游记.txt"
 
 ## Library and local files
 
-The default server is [Niko Wenku Archive](https://111.229.32.85/nikowenku-archive/). To use another compatible server, provide its base URL, including any path prefix:
+The [main homepage](https://111.229.32.85/) is a collection of website cards and navigation links, with the light novel library as its first default card. Open [Niko Wenku Archive](https://111.229.32.85/nikowenku-archive/) to browse, search, read, and download books. The CLI uses this library subsite by default; the general homepage and the book catalog are separate entry points.
+
+To use another compatible server, provide its base URL, including any path prefix:
 
 ```sh
 nikowenku-archive search "星" --site "https://example.org/nikowenku-archive/"
